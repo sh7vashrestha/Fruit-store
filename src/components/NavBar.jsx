@@ -2,12 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-scroll";
 import logo from "../assets/logo.png";
-import {
-  FaBars,
-  FaTimes,
-  FaHome,
-  FaPhoneSquare,
-} from "react-icons/fa";
+import { FaBars, FaTimes, FaHome, FaPhoneSquare } from "react-icons/fa";
 import { CiShop } from "react-icons/ci";
 import { GiFruitBowl } from "react-icons/gi";
 
@@ -17,7 +12,7 @@ export default function NavBar() {
     setNav(!nav);
   };
   return (
-    <div className="fixed w-full h-[85px] flex justify-between items-center px-4 bg-[#e6c67c] text-[#f4f4f4] opacity-100 z-5">
+    <div className="fixed w-full h-[85px] flex justify-between items-center px-4 bg-[#e6c67c] text-[#f4f4f4] opacity-100 z-[1]">
       <div>
         <span>
           <Link to="home" smooth={true} duration={500}>
@@ -151,7 +146,7 @@ export default function NavBar() {
               duration={500}
               smooth={true}
               spy={true}>
-              <CiShop/>
+              <CiShop />
             </Link>
           </li>
           <li className="w-auto text-[#444] flex flex-col justify-center min-h-[50px] ">
@@ -161,7 +156,7 @@ export default function NavBar() {
               duration={500}
               smooth={true}
               spy={true}>
-              <GiFruitBowl/>
+              <GiFruitBowl />
             </Link>
           </li>
           <li className="w-auto text-[#444] flex flex-col justify-center min-h-[50px] ">
