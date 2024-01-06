@@ -7,6 +7,8 @@
 @layer base {
   body {
     @apply font-[Poppins];
+    @apply bg-[#eee];
+    box-sizing: border-box;
   }
   li {
     @apply px-4;
@@ -18,7 +20,7 @@
     transition: border-bottom 0.15s;
   }
   .homeIcon{
-    font-size: 40px;
+    font-size: 50px;
     color: #c7a003;
     transition: font-size 0.15s;
     margin-top: 50px;
