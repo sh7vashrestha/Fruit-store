@@ -5,9 +5,9 @@ function About() {
   return (
     <div
       id="about"
-      className="w-full sm:h-[100vh] min-h-[100vh] bg-[#eee] text-[#444] top-[-20]">
+      className="w-full min-h-[100vh] bg-[#eee] text-[#444] pb-36 sm:pb-0">
       <div className="max-w-[1000px] mx-auto px-5 pt-36 justify-center items-center h-full">
-        <p className="text-[#978300ee] text-3xl sm:text-6xl md:text-8xl inline text-right relative sm:left-[40%] md:left-[35%] top-[5%] z-[0] font-medium font-sans">
+        <p className="text-[#978300ee] text-2xl sm:text-4xl md:text-7xl inline text-right relative sm:left-[40%] md:left-[35%] top-[5%] z-[0] font-medium font-sans">
           ABOUT US
         </p>
         <div className="flex sm:flex-row flex-col w-auto min-h-auto">

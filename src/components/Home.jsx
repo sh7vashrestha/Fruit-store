@@ -5,7 +5,7 @@ function Home() {
   return (
     <div
       id="home"
-      className="w-full sm:h-[100vh] min-h-[100vh] bg-[#eee] text-[#444] ">
+      className="w-full sm:h-[100vh] min-h-[100vh] bg-[#eee] text-[#444]">
       <div className="max-w-[1000px] mx-auto px-5 pt-36 sm:pt-5 flex flex-col justify-center items-center h-full md:flex-row">
         <div className="flex flex-col flex-1 justify-center">
           <p className="text-lg">Welcome to</p>

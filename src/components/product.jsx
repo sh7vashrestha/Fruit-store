@@ -52,7 +52,7 @@ const Product = () => {
   return (
     <div
       name="products"
-      className="w-full sm:h-[100vh] min-h-[100vh] bg-[#eee] text-[#333] pt-36">
+      className="w-full min-h-[100vh] bg-[#eee] text-[#333] md:py-36">
       <div className="max-w-[1000px] mx-auto">
         <div className="pb-8">
           <p className="text-4xl sm:text-5xl font-semibold inline text-[#978300ee]">
@@ -83,6 +83,7 @@ const Product = () => {
               </div>
             ))}
           </Carousel>
+          <p className="font-light text-base mx-auto"><strong>Note*:</strong> Prices are subjectable to negotaition.</p>
         </div>
       </div>
     </div>
