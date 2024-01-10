@@ -39,7 +39,6 @@ export default function NavBar() {
         </li>
         <li className="sm:px-4 md:px-6 cursor-pointer text-lg ">
           <Link
-          isDynamic={true}
             activeClass="active"
             to="about"
             smooth={true}
@@ -50,7 +49,6 @@ export default function NavBar() {
         </li>
         <li className="sm:px-4 md:px-6 cursor-pointer text-lg ">
           <Link
-          isDynamic={true}
             activeClass="active"
             to="products"
             smooth={true}
@@ -63,7 +61,6 @@ export default function NavBar() {
           <Link
             activeClass="active"
             to="contact"
-            offset={50}
             smooth={true}
             spy={true}
             duration={500}>

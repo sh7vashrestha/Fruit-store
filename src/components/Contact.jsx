@@ -57,7 +57,7 @@ function Contact() {
           </form>
         </div>
       </div>
-      <div className="max-w-[1300px] h-auto m-auto flex justify-around align-middle flex-row p-3">
+      <div className="max-w-[1300px] h-auto m-auto flex justify-around text-sm p-1 sm:text-base align-middle flex-row sm:p-3">
         <div>
           <MdAttachEmail className="inline-block" size={20} />{" "}
           contact@sagarmathafruitcenter.com.np
