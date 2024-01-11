@@ -1,19 +1,13 @@
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Home from "./components/Home";
-import NavBar from "./components/NavBar";
-import Product from "./components/Product";
-import Footer from "./components/Footer";
+import React from 'react'
+import MainPage from './pages/MainPage';
+import LoginPage from './pages/LoginPage';
 
 function App() {
-  return (<div> 
-    <NavBar />
-    <Home />
-    <About />
-    <Product />
-    <Contact />
-    <Footer />
-  </div>)
+  return (
+    <div>
+      <MainPage />
+    </div>
+  )
 }
 
-export default App;
+export default App

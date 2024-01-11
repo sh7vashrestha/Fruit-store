@@ -1,5 +1,5 @@
 import React from "react";
-import fruits from "../assets/home.png";
+import fruits from "../../assets/home.png";
 
 function Home() {
   return (

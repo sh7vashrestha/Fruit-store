@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import fruit0 from "../assets/Products/Mango.png"
-import fruit1 from "../assets/Products/Banana.png"
-import fruit2 from "../assets/Products/Apple.png"
-import fruit3 from "../assets/Products/Orange.png"
-import fruit4 from "../assets/Products/Grapes.png"
+import fruit0 from "../../assets/Products/Mango.png"
+import fruit1 from "../../assets/Products/Banana.png"
+import fruit2 from "../../assets/Products/Apple.png"
+import fruit3 from "../../assets/Products/Orange.png"
+import fruit4 from "../../assets/Products/Grapes.png"
 
 const Product = () => {
   const shouldLog = useRef(true);
@@ -83,7 +83,7 @@ const Product = () => {
               </div>
             ))}
           </Carousel>
-          <p className="font-light text-base mx-auto"><strong>Note*:</strong> Prices are subjectable to negotaition.</p>
+          <p className="font-light text-base mx-auto"><strong>Note*:</strong> Prices are subjectable to negotiation.</p>
         </div>
       </div>
     </div>

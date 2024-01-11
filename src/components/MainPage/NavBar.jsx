@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-scroll";
-import logo from "../assets/logo.png";
+import logo from "../../assets/logo.png";
 import { FaBars, FaTimes, FaHome, FaPhoneSquare } from "react-icons/fa";
 import { CiShop } from "react-icons/ci";
 import { GiFruitBowl } from "react-icons/gi";
@@ -29,7 +29,6 @@ export default function NavBar() {
         <li className="sm:px-4 md:px-6 cursor-pointer text-lg ">
           <Link
             activeClass="active"
-            offset={-50}
             to="home"
             smooth={true}
             duration={500}
@@ -108,9 +107,7 @@ export default function NavBar() {
             activeClass="active"
             spy={true}
             onClick={handelClick}
-            isDynamic
             to="products"
-            offset={50}
             smooth={true}
             duration={500}>
             Products
