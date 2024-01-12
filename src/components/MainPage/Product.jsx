@@ -16,7 +16,7 @@ const Product = () => {
   const getData = async () => {
     try {
       const res = await fetch(
-        "https://sheet.best/api/sheets/70b5d4b9-288f-405c-8958-8fa05fb9a3c2"
+        process.env.REACT_APP_PRODUCT_LINKS
       );
       const data1 = await res.json();
       setData(data1);
