@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect, useContext } from "react";
 import logo from "../../assets/logo.png";
 import axios from "../../api/axios";
 import AuthContext from "../../context/authProvider";
+import { Link } from "react-router-dom";
 
 const LOGIN_URL = "/auth/login/admin";
 
@@ -24,8 +25,8 @@ function SignIn() {
       const res = await axios.post(
         LOGIN_URL,
         JSON.stringify({
-          "email": user,
-          "password": pwd,
+          email: user,
+          password: pwd,
         }),
         {
           headers: {
@@ -60,19 +61,27 @@ function SignIn() {
         className="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1499123785106-343e69e68db1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1748&q=80')`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
         }}>
         <div className="rounded-xl bg-gray-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
           <div className="text-white">
             <div className="mb-8 flex flex-col items-center">
-              <img src={logo} width="150" alt="" srcset="" />
+              <Link to="/">
+                <img src={logo} width="150" alt="" srcset="" />
+              </Link>
               <h1 className="mb-2 text-2xl">Sagarmatha Fruit Store</h1>
               <span className="text-gray-300">Enter Login Details</span>
-              <p
-                ref={errRef}
-                className={errMsg ? "errmsg" : "hidden"}
-                aria-live="assertive">
-                {errMsg}
-              </p>
+              <div className="h-auto">
+                <p
+                  ref={errRef}
+                  className={
+                    errMsg ? "text-[#ff7878] font-semibold text-lg p-2" : "hidden"
+                  }
+                  aria-live="assertive">
+                  {errMsg}
+                </p>
+              </div>
             </div>
             <form onSubmit={handelSubmit}>
               <div className="mb-4 text-lg">
