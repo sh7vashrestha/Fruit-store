@@ -10,7 +10,6 @@ function Map() {
   maptilersdk.config.apiKey = process.env.REACT_APP_MAPTILER_API_KEY;
   useEffect(() => {
     if (map.current) return; // stops map from intializing more than once
-    console.log(process.env.REACT_APP_MAPTILER_API_KEYS +"hELLO");
     map.current = new maptilersdk.Map({
       container: mapContainer.current,
       style: maptilersdk.MapStyle.STREETS,

@@ -1,19 +1,19 @@
 import React from "react";
 import MainPage from "./pages/MainPage";
 import LoginPage from "./pages/LoginPage";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import AdminPage from "./pages/AdminPage";
 
 function App() {
   return (
-    <BrowserRouter>
       <div>
         <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/fruit-store" element={<MainPage />} />
-        <Route path="/login" element={<LoginPage />} />
+          <Route path="/" element={<MainPage />} />
+          <Route path="/fruit-store" element={<MainPage />} />
+          <Route path="/admin" element={<LoginPage />} />
+          <Route path="/adminpanel" element={<AdminPage />} />
         </Routes>
       </div>
-    </BrowserRouter>
   );
 }
 
