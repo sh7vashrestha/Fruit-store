@@ -1,5 +1,5 @@
 import React from 'react'
-import SignIn from '../components/LoginPage/SignIn'
+import SignIn from '../components/Admin/SignIn'
 
 function LoginPage() {
   return (

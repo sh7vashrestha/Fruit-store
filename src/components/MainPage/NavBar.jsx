@@ -5,8 +5,11 @@ import logo from "../../assets/logo.png";
 import { FaBars, FaTimes, FaHome, FaPhoneSquare } from "react-icons/fa";
 import { CiShop } from "react-icons/ci";
 import { GiFruitBowl } from "react-icons/gi";
+import useAuth from "../../hooks/useAuth";
+import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
+  const {auth} = useAuth();
   const [nav, setNav] = useState(false);
   const handelClick = () => {
     setNav(!nav);
@@ -66,6 +69,11 @@ export default function NavBar() {
             Contact Us
           </Link>
         </li>
+        {auth?<li className="sm:px-4 md:px-6 cursor-pointer text-lg ">
+            <NavLink to={'/adminpanel'}>
+            Admin
+          </NavLink>
+        </li>:<></>}
       </ul>
       <div onClick={handelClick} className="md:hidden z-10">
         {!nav ? (

@@ -3,6 +3,7 @@ import logo from "../../assets/logo.png";
 import axios from "../../api/axios";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import Cookies from "universal-cookie";
 
 const LOGIN_URL = "/auth/login/admin";
 
@@ -14,6 +15,7 @@ function SignIn() {
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const { setAuth } = useAuth();
+  const Cookie = new Cookies();
 
   useEffect(() => {
     setErrMsg("");
@@ -40,6 +42,8 @@ function SignIn() {
       setPwd("");
       setUser("");
       setAuth(accessToken);
+      Cookie.set("auth", accessToken, { path: "/adminpanel" })
+      Cookie.set("auth", accessToken, { path: "/admin" })
       navigate("/adminpanel");
     } catch (err) {
       if (!err.response) {

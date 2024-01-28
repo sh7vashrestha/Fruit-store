@@ -1,20 +1,21 @@
 import React, { useEffect } from "react";
-import AdminPanel from "../components/LoginPage/AdminPanel";
-import useAuth from "../hooks/useAuth";
+import AdminPanel from "../components/Admin/AdminPanel";
 import { useNavigate } from "react-router-dom";
+import Cookies from "universal-cookie";
 
 function AdminPage() {
   const navigate = useNavigate();
-  const { auth } = useAuth();
   useEffect(() => {
-    if (!auth) {
+    const Cookie = new Cookies();
+    if (!Cookie.get("auth")) {
       navigate("/admin");
     }
-  })
-    return (
-      <div>
-        <AdminPanel />
-      </div>)
+  }, []);
+  return (
+    <div>
+      <AdminPanel />
+    </div>
+  );
 }
 
 export default AdminPage;
