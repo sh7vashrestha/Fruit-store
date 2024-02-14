@@ -19,6 +19,7 @@ const Product = () => {
         process.env.REACT_APP_PRODUCT_LINKS
       );
       const data1 = await res.json();
+      console.log(data1);
       setData(data1);
     } catch (err) {
       console.log(err);
