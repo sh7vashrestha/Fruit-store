@@ -1,26 +1,26 @@
 import React, { useEffect, useRef, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import fruit0 from "../../assets/Products/Mango.png"
-import fruit1 from "../../assets/Products/Banana.png"
-import fruit2 from "../../assets/Products/Apple.png"
-import fruit3 from "../../assets/Products/Orange.png"
-import fruit4 from "../../assets/Products/Grapes.png"
+import axios from "../../api/axios";
+
+const Fruits_URL = "/fruits";
 
 const Product = () => {
   const shouldLog = useRef(true);
-  const [data, setData] = useState([{
-    Name: "",
-    Price: ""
-  }]);
-  const getData = async () => {
+  const [res, setRes] = useState([
+    {
+      _id: "",
+      name: "",
+      price: 0,
+      imageUrl: "",
+      __v: 0,
+    },
+  ]);
+  const fetchfruits = async () => {
     try {
-      const res = await fetch(
-        process.env.REACT_APP_PRODUCT_LINKS
-      );
-      const data1 = await res.json();
-      console.log(data1);
-      setData(data1);
+      const response = await axios.get(Fruits_URL);
+      const data = await response.data.data;
+      setRes(data);
     } catch (err) {
       console.log(err);
     }
@@ -43,11 +43,11 @@ const Product = () => {
       items: 1,
     },
   };
-  const image = [fruit0, fruit1, fruit2, fruit3, fruit4]
+
   useEffect(() => {
     if (shouldLog.current) {
       shouldLog.current = false;
-      getData();
+      fetchfruits();
     }
   }, []);
   return (
@@ -72,14 +72,14 @@ const Product = () => {
             draggable={true}
             focusOnSelect={true}
             autoPlay={true}>
-            {data?.map((item, index) => (
+            {res?.map((item, index) => (
               <div
                 key={index}
                 className="flex group hover:scale-105 hover:shadow-2xl hover:shadow-[#978300ee] duration-700 flex-col justify-center align-middle border-2 border-[#978300ee] rounded-lg p-3">
-                <img className="p-2 m-auto" src={image[index]} alt="fruit" />
+                <img className="p-2 m-auto" src={item.imageUrl} alt="fruit" />
                 <p className="mx-auto text-3xl p-2">{item.Name}</p>
                 <p className="bg-[#2eaa2e] text-sm py-2 px-5  text-[#eee] mx-auto">
-                  &#8360;{item.Price}
+                  &#8360;. {item.price}
                 </p>
               </div>
             ))}

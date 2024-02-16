@@ -6,7 +6,6 @@ import axios from "../../api/axios";
 import { axiosWithAuthPost, axiosWithAuth } from "../../api/axios";
 import { IoAddCircleSharp } from "react-icons/io5";
 import PopUp from "./PopUp";
-import { Alert } from "bootstrap";
 const Fruits_URL = "/fruits";
 
 function AdminPanel() {
@@ -59,6 +58,27 @@ function AdminPanel() {
       });
     setButtonPopup(false);
   };
+
+  const handleUpdate = (e) => {
+    e.preventDefault();
+    axiosWithAuthPost
+      .put(`${Fruits_URL}/${fruitsId}`, {
+        name: name,
+        price: parseInt(price),
+      })
+      .then((res) => {
+        setMsg("Fruits updated Successfully");
+        setName();
+        setPrice();
+        setFile();
+        alert("Fruit Updated Successfully-Refresh to check the updated list");
+        window.location.reload();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    setEditWindow(false);
+  }
 
   useEffect(() => {
     if (refresh.current) {
@@ -120,7 +140,7 @@ function AdminPanel() {
                   </th>
                   <td className="px-6 py-4">{item.price}</td>
                   <td className="px-6 py-4 w-[20%]">
-                    <img src={item.imageUrl} alt="Fruits" />{" "}
+                    <img src={item.imageUrl} alt="Fruits" />
                   </td>
                   <td className="px-6 py-4 flex flex-row justify-around">
                     <div>
@@ -237,7 +257,7 @@ function AdminPanel() {
         <PopUp trigger={editWindow} setTrigger={setEditWindow}>
           <form
             onSubmit={(e) => {
-              handleAdd(e);
+              handleUpdate(e);
             }}
             className="p-2 m-2 flex flex-col justify-center items-center max-w-[100%]">
             <div className="pb-5 m-2">
@@ -270,23 +290,6 @@ function AdminPanel() {
                 placeholder="Price"
                 onChange={(e) => {
                   setPrice(e.target.value);
-                }}
-                required
-              />
-            </div>
-            <div className="pb-5">
-              <label
-                className="mr-5 sm:text-xl text-lg font-semibold "
-                htmlFor="imageUrl">
-                Image
-              </label>
-              <input
-                className="p-2 max-w-full rounded-md text-base text-center text-[#333] placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
-                type="file"
-                accept="image/*"
-                placeholder="ImageURL"
-                onChange={(e) => {
-                  setFile(e.target.files[0]);
                 }}
                 required
               />

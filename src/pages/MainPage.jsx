@@ -10,7 +10,7 @@ function MainPage() {
     <NavBar />
     <Home />
     <About />
-    {/* <Product /> */}
+    <Product />
     <Contact />
     <Footer />
   </div>)
